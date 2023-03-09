@@ -1,0 +1,27 @@
+# permissions for end users to view emailers.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: emailer-viewer-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: banshee-operator
+    app.kubernetes.io/part-of: banshee-operator
+    app.kubernetes.io/managed-by: kustomize
+  name: emailer-viewer-role
+rules:
+- apiGroups:
+  - github.com
+  resources:
+  - emailers
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - github.com
+  resources:
+  - emailers/status
+  verbs:
+  - get

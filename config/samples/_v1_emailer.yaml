@@ -1,0 +1,12 @@
+apiVersion: github.com/v1
+kind: Emailer
+metadata:
+  labels:
+    app.kubernetes.io/name: emailer
+    app.kubernetes.io/instance: emailer-sample
+    app.kubernetes.io/part-of: banshee-operator
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: banshee-operator
+  name: emailer-sample
+spec:
+  # TODO(user): Add fields here
